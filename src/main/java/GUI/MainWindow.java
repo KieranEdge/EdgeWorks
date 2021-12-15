@@ -13,7 +13,7 @@ public class MainWindow {
 
     public static void main(String args[]){
         // Creating the frame
-        JFrame frame = new JFrame("My First GUI");
+        JFrame frame = new JFrame("Edgeware");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Sizing the window
