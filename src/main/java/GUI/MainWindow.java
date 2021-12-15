@@ -18,7 +18,7 @@ public class MainWindow {
 
         // Sizing the window
         int[] size = WindowFunctions.winSize();
-        System.out.println("Window size: " + size[0] + " x " + size[1]);
+        System.out.println("Dimensions: " + size[0] + " x " + size[1]);
         frame.setSize(size[0], size[1]);
 
         // Adding a button
