@@ -1,4 +1,5 @@
 package Vision;
 
-public class Camera {
+public class Camera{
+
 }
