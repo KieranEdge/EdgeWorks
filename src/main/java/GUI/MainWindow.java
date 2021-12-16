@@ -10,6 +10,7 @@ public class MainWindow {
     JFrame mainFrame;
     JFrame imageFrame;
     JFrame outputFrame;
+    JMenuBar mainMenu;
 
     // Class Constructor
     public MainWindow(){
@@ -17,6 +18,7 @@ public class MainWindow {
         mainFrame = new JFrame("EdgeWare");
         imageFrame = new JFrame();
         outputFrame = new JFrame();
+        mainMenu = new JMenuBar();
     }
 
     public static void main(String args[]){
@@ -28,6 +30,9 @@ public class MainWindow {
         int[] size = WindowFunctions.winSize();
         System.out.println("Dimensions: " + size[0] + " x " + size[1]);
         Frames.mainFrame.setSize(size[0], size[1]);
+
+        // Adding a menu bar
+
 
         // Adding a button
         JButton button = new JButton("Press");
