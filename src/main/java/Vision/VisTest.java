@@ -5,7 +5,6 @@ import java.io.IOException;
 
 public class VisTest {
     public static void main(String[] args) throws IOException {
-        Camera.version();
         Camera.captureSingle();
     }
 }
