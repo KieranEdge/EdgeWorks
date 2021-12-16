@@ -29,43 +29,44 @@ public class WebcamViewer extends JFrame implements Runnable, WebcamListener, Wi
 
     private static final long serialVersionUID = 1L;
 
+    // Creating the objects for webcams, selection and display panel
     private Webcam webcam = null;
     private WebcamPanel panel = null;
     private WebcamPicker picker = null;
 
     @Override
     public void run() {
-
+        // Discovering available webcams
         Webcam.addDiscoveryListener(this);
 
+        // Creating the display window parameters
         setTitle("Java Webcam Capture POC");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        addWindowListener(this); // Listening for events from this window
 
-        addWindowListener(this);
-
+        // Webcam selection
         picker = new WebcamPicker();
         picker.addItemListener(this);
-
         webcam = picker.getSelectedWebcam();
 
+        // Exiting the programme if no webcam is available
         if (webcam == null) {
             System.out.println("No webcams found...");
             System.exit(1);
         }
 
+        // Setting the webcam viewer window
         webcam.setViewSize(WebcamResolution.VGA.getSize());
         webcam.addWebcamListener(WebcamViewer.this);
-
         panel = new WebcamPanel(webcam, false);
         panel.setFPSDisplayed(true);
-
         add(picker, BorderLayout.NORTH);
         add(panel, BorderLayout.CENTER);
-
         pack();
         setVisible(true);
 
+        // Initialising the thread and subclass
         Thread t = new Thread() {
 
             @Override
@@ -73,13 +74,18 @@ public class WebcamViewer extends JFrame implements Runnable, WebcamListener, Wi
                 panel.start();
             }
         };
+
+        // Setting the thread parameters
         t.setName("example-starter");
         t.setDaemon(true);
         t.setUncaughtExceptionHandler(this);
+
+        // Starting the thread
         t.start();
     }
 
     public static void main(String[] args) {
+        // Calling the run method specified above
         SwingUtilities.invokeLater(new WebcamViewer());
     }
 
