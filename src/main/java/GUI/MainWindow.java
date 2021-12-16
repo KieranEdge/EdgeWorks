@@ -9,6 +9,10 @@ public class MainWindow {
 
     // Class Constructor
     public MainWindow(){
+        // Creating  the frames for the GUI
+        JFrame mainFrame = new JFrame();
+        JFrame imageFrame = new JFrame();
+        JFrame outputFrame = new JFrame();
     }
 
     public static void main(String args[]){
