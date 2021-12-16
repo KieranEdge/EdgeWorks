@@ -4,7 +4,25 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+
+import java.awt.BorderLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.lang.Thread.UncaughtExceptionHandler;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamDiscoveryEvent;
+import com.github.sarxos.webcam.WebcamDiscoveryListener;
+import com.github.sarxos.webcam.WebcamEvent;
+import com.github.sarxos.webcam.WebcamListener;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.github.sarxos.webcam.WebcamPicker;
+import com.github.sarxos.webcam.WebcamResolution;
 
 
 /**
@@ -35,5 +53,11 @@ public class Camera{
         ImageIO.write(image, "PNG", new File("target\\Images\\test.png"));
     }
 
+    /*
+    Class to show a continuous feed from a webcam
+     */
+    public static void showFeed() throws IOException{
+
+    }
 
 }
