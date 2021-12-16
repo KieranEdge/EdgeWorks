@@ -29,9 +29,11 @@ public class Camera{
 
         // get image
         BufferedImage image = webcam.getImage();
+        System.out.println(image);
 
         // save image to PNG file
-        ImageIO.write(image, "PNG", new File("test.png"));
-
+        ImageIO.write(image, "PNG", new File("target\\Images\\test.png"));
     }
+
+
 }
